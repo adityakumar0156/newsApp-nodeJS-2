@@ -1,0 +1,90 @@
+{{>header}}
+
+    <br>
+    <h4 style="text-align:center;">Breaking</h4>
+    <!-- <img src='./Capture.PNG' style='margin:auto; border:2px solid red;width:200px;height:100px;'> -->
+    <div class="break">
+
+
+        <hr />
+        {{#each object2.articles}}
+        <div class="box">
+
+            {{!-- <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">{{this.published}}</div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text">{{this.title}}}</p>
+                </div>
+            </div> --}}
+
+
+            <a href="{{url}}" class="btn">
+                <span style="margin-bottom:3px;">Time : <b>{{this.publishedAt}}</b></span>
+                <h5 class="card-title">{{this.title}}</h5>
+            </a>
+        </div>
+
+        {{/each}}
+
+
+    </div>
+    <br>
+    <h3 style="text-align:center;">Tags</h3>
+    <div class="scroll">
+        <a class="btn btn-primary" href='/btn/business'>Buissness</a>
+        <a class="btn btn-secondary" href='/btn/entertainment'>Entertainment</a>
+        <a class="btn btn-success" href='/btn/general'>General</a>
+        <a class="btn btn-danger" href='/btn/health'>Health</a>
+        <a class="btn btn-warning" href='/btn/science'>Science</a>
+        <a class="btn btn-primary" href='/btn/sports'>Sports</a>
+        <a class="btn btn-success" href='/btn/technology'>Technology</a>
+
+
+    </div>
+
+    <br>
+    <div class="container">
+        <form class="form-inline my-2 my-lg-0 " action="/search" method ='POST'>
+            <input class="form-control mr-sm-2 my-1" type="search" placeholder="Search" aria-label="Search"  name="search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Search</button>
+        </form>
+
+    </div>
+
+    <h3 style="text-align:center;">Headlines & Articles</h3>
+    <div class="news">
+        {{#each object.articles}}
+
+
+        <div class="crd my-3">
+            <div class="img_">
+                <img src="{{this.urlToImage}}" class="crd_img" alt="..." style=''>
+            </div>
+            <div class="img_1">
+                <h3>{{this.title}}</h3>
+                <p>{{this.description}}</p>
+                <a href="{{url}}" class="btn btn-primary">Read More</a>
+
+            </div>
+
+        </div>
+
+
+        {{!-- <div class="card my-3 mx-3 my-3" style="width: 18rem;height:520px;overflow:auto;">
+            <img src="{{this.urlToImage}}" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">{{this.title}}</h5>
+                <p class="card-text">{{this.description}}</p>
+                <a href="{{url}}" class="btn btn-primary">Know more</a>
+
+            </div>
+        </div> --}}
+
+        {{/each}}
+
+    </div>
+
+    {{!-- <a href="#" style="position:relative;bottom:80px;left:20px;" class="btn btn-primary">Go on th Top</a> --}}
+
+{{>footer}}

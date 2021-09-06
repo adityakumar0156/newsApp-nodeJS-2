@@ -1,0 +1,89 @@
+{{>header}}
+
+
+<h2 style="text-align: center;margin:auto;font-family: 'Architects Daughter', cursive;">
+    {{show}}</h2>
+<br>
+
+<h3 style=''>
+    Tags:</h3>
+
+<div class="scroll">
+    <a class="btn btn-primary" href='/quotes/romantic'>Romantic</a>
+    <a class="btn btn-secondary" href='/quotes/motivational'>Motivational</a>
+    <a class="btn btn-success" href='/quotes/success'>Success</a>
+    <a class="btn btn-danger" href='/quotes/friendship'>Friendship</a>
+    <a class="btn btn-warning" href='/quotes/sad'>Sad</a>
+    <a class="btn btn-primary" href='/quotes/relationship'>Relationship</a>
+    <a class="btn btn-success" href='/quotes/student'>Student</a>
+    <a class="btn btn-success" href='/quotes/sci'>Scientific</a>
+
+
+</div>
+
+
+<a class="btn btn-danger mx-3 my-4" href='/quotes/{{type}}'>Load More</a>
+
+
+<div class="box_q">
+
+
+
+    {{#if object_tags}}
+    {{#each object_tags}}
+
+
+    <div class="main_q">
+        <img src="{{this}}" class='img_q'>
+
+    </div>
+
+    {{/each}}
+
+    {{/if}}
+
+
+    {{#if object_genq.results}}
+    {{#each object_genq.results}}
+
+
+    <div class="main_q">
+        <img src="https://cdn.pixabay.com/photo/2015/12/12/21/33/sunset-1090163_960_720.jpg" class='img_q'>
+        <p class="abs_q">{{this.content}}<br><b>---{{this.author}}</b>
+        </p>
+        </p>
+
+    </div>
+
+    {{/each}}
+
+    {{/if}}
+
+
+    {{#if object_jokes.body}}
+
+    {{#each object_jokes.body}}
+
+
+    <div class="main_q">
+        <img src="https://cdn.pixabay.com/photo/2015/12/12/21/33/sunset-1090163_960_720.jpg" class='img_q'>
+        <p class="abs_q">{{this.setup}}<br><br><b>{{this.punchline}}</b>
+        </p>
+        </p>
+
+    </div>
+
+    {{/each}}
+
+    {{/if}}
+
+
+
+
+</div>
+
+{{!-- <a class="btn btn-danger mx-3 my-5" href='#'>GoTO Top</a> --}}
+
+
+
+{{>footer}}
