@@ -239,6 +239,6 @@ app.post('/search', function(req, res) {
     main();
 })
 
-app.listen(5000, function() {
+app.listen(5000 || process.env.PORT, function() {
     // console.log(`app is listening at port :${port}`);
 })
